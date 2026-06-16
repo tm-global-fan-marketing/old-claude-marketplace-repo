@@ -1,6 +1,6 @@
-# marketing-central Claude Plugin
+# tm-marketing-core Claude Plugin
 
-Marketing skills and tools for Live Nation's central marketing org.
+Marketing skills and tools for Ticketmaster's central marketing org.
 
 ## What This Plugin Provides
 
@@ -25,8 +25,8 @@ If it is not appearing, contact your admin or follow the manual install steps be
 ### Manual Install (testers / early access)
 
 ```bash
-claude plugin marketplace add https://your-org.github.io/claude-plugin-marketing-central
-claude plugin install marketing-central@marketing-central
+claude plugin marketplace add git@git.tmaws.io:andrew.wragg/claude-plugin-tm-marketing-core.git
+claude plugin install tm-marketing-core@tm-marketing-core-marketplace
 ```
 
 ### Confluence Authentication
@@ -36,40 +36,28 @@ When you first use a skill that searches Confluence, Claude may prompt for a Con
 1. Generate a Confluence API token at https://id.atlassian.com/manage-profile/security/api-tokens
 2. When Claude prompts for credentials, provide your email and API token
 
-If you cannot access Confluence or receive an authentication error, contact marketing-tech@livenation.com.
+If you cannot access Confluence or receive an authentication error, contact marketing-tech@ticketmaster.com.
 
 ---
 
 ## For Admins
 
-### One-Time Setup
+### Enterprise Admin Setup (one-time)
 
-1. Ensure the `manifest.json` is live at `https://your-org.github.io/claude-plugin-marketing-central/manifest.json`
-2. In the claude.ai admin console, add the GitHub Pages URL as a known marketplace
-3. Enable the `marketing-central` plugin for all users
-4. Staff will see the plugin under **Customize → Plugins → Your organisation**
-
-### GitHub Pages Configuration
-
-In the repo settings:
-- Go to **Settings → Pages**
-- Set source to the `main` branch, `/docs` folder
-- Click **Save** — GitHub Pages will publish within ~1 minute
-
-Verify it is working:
-```bash
-curl https://your-org.github.io/claude-plugin-marketing-central/manifest.json
-```
+1. In the claude.ai admin console, add the marketplace URL:
+   `git@git.tmaws.io:andrew.wragg/claude-plugin-tm-marketing-core.git`
+2. Enable the `tm-marketing-core` plugin for all users
+3. Staff will see the plugin under **Customize → Plugins → Your organisation**
 
 ### Adding New Skills
 
 1. Create `skills/[skill-name]/SKILL.md`
 2. Add a trigger row to `CLAUDE.md`
-3. Update `version` in `docs/manifest.json` and `.claude-plugin/plugin.json`
+3. Bump `version` in `.claude/plugin.json` and `.claude-plugin/marketplace.json`
 4. Commit and push — staff pick up the update automatically
 
 ---
 
 ## Support
 
-Contact the marketing technology team at marketing-tech@livenation.com.
+Contact the marketing technology team at marketing-tech@ticketmaster.com.

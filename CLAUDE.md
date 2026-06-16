@@ -1,6 +1,6 @@
-# marketing-central Plugin
+# tm-marketing-core Plugin
 
-This plugin provides marketing skills and the LN Confluence connector for Live Nation's central marketing org (B2C and B2B teams).
+This plugin provides marketing skills and the LN Confluence connector for Ticketmaster's central marketing org (B2C and B2B teams).
 
 ## Skills
 
@@ -8,9 +8,9 @@ When the user's request matches a trigger below, invoke the corresponding skill 
 
 | Skill | Triggers When |
 |---|---|
-| `marketing-central:copywriting` | User asks to write, edit, review, or improve marketing copy, headlines, CTAs, emails, ads, or any brand-facing text |
-| `marketing-central:translation` | User asks to translate, localise, or adapt content for a different language, region, or market (including UK/US market adaptations) |
-| `marketing-central:campaign-planning` | User asks to plan, brief, structure, or outline a marketing campaign |
+| `tm-marketing-core:copywriting` | User asks to write, edit, review, or improve marketing copy, headlines, CTAs, emails, ads, or any brand-facing text |
+| `tm-marketing-core:translation` | User asks to translate, localise, or adapt content for a different language, region, or market (including UK/US market adaptations) |
+| `tm-marketing-core:campaign-planning` | User asks to plan, brief, structure, or outline a marketing campaign |
 
 ## LN Confluence Connector
 
