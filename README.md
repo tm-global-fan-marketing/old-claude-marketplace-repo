@@ -53,7 +53,7 @@ If you cannot access Confluence or receive an authentication error, contact mark
 
 In the repo settings:
 - Go to **Settings → Pages**
-- Set source to the `main` branch, `/docs/gh-pages` folder
+- Set source to the `main` branch, `/docs` folder
 - Click **Save** — GitHub Pages will publish within ~1 minute
 
 Verify it is working:
@@ -65,7 +65,7 @@ curl https://your-org.github.io/claude-plugin-marketing-central/manifest.json
 
 1. Create `skills/[skill-name]/SKILL.md`
 2. Add a trigger row to `CLAUDE.md`
-3. Update `version` in `docs/gh-pages/manifest.json` and `.claude-plugin/plugin.json`
+3. Update `version` in `docs/manifest.json` and `.claude-plugin/plugin.json`
 4. Commit and push — staff pick up the update automatically
 
 ---
