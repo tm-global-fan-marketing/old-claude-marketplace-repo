@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "ln-confluence": {
+      "url": "https://confluence.livenation.com/mcp"
+    }
+  }
+}
