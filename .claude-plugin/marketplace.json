@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "tm-marketing-core-marketplace",
-  "description": "Ticketmaster central marketing org — Claude Code plugins for copywriting, translation, and campaign planning",
+  "name": "tm-marketing-marketplace",
+  "description": "Ticketmaster central marketing org — Claude Code plugins for B2C and B2B marketing teams",
   "owner": {
     "name": "Ticketmaster Marketing",
     "email": "marketing-tech@ticketmaster.com"
@@ -15,7 +15,7 @@
         "name": "Ticketmaster Marketing",
         "email": "marketing-tech@ticketmaster.com"
       },
-      "source": "./",
+      "source": "./plugins/tm-marketing/tm-marketing-core",
       "category": "marketing",
       "keywords": [
         "marketing",
@@ -29,7 +29,8 @@
         "marketing",
         "copywriting",
         "translation",
-        "campaign-planning"
+        "campaign-planning",
+        "tm-marketing"
       ]
     }
   ]

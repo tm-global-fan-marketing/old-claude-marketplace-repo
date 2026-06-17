@@ -1,63 +1,72 @@
-# tm-marketing-core Claude Plugin
+# TM Marketing Claude Code Marketplace
 
-Marketing skills and tools for Ticketmaster's central marketing org.
+**Marketplace Name**: `tm-marketing-marketplace`
+**Repository**: `https://git.tmaws.io/andrew.wragg/claude-plugin-marketing-central`
 
-## What This Plugin Provides
+Ticketmaster Marketing's shared catalog of Claude Code plugins for B2C and B2B marketing teams.
 
-**Skills:**
-- `copywriting` — Write and edit B2C and B2B marketing copy with brand voice
-- `translation` — Translate and localise marketing content (including regional/market adaptations)
-- `campaign-planning` — Plan structured marketing campaigns using Confluence context
-
-**Connector:**
-- LN Confluence — Automatically connected on install. Skills use it for brand guidelines, existing campaigns, and publishing outputs.
-
-Skills trigger automatically from natural language — no slash commands needed.
-
----
-
-## For Staff
-
-The plugin is managed centrally and should already appear under **Customize → Plugins → Your organisation** in Claude Desktop. No action needed.
-
-If it is not appearing, contact your admin or follow the manual install steps below.
-
-### Manual Install (testers / early access)
+## Quick Start
 
 ```bash
-claude plugin marketplace add git@git.tmaws.io:andrew.wragg/claude-plugin-tm-marketing-core.git
-claude plugin install tm-marketing-core@tm-marketing-core-marketplace
+# Add the marketplace (one-time setup)
+claude plugin marketplace add git@git.tmaws.io:andrew.wragg/claude-plugin-marketing-central.git
+
+# Install plugins
+claude plugin install tm-marketing-core@tm-marketing-marketplace
+
+# Verify installation
+claude plugin list
+
+# Update plugins
+claude plugin update
 ```
 
-### Confluence Authentication
+## Available Plugins
 
-When you first use a skill that searches Confluence, Claude may prompt for a Confluence API token. To set this up:
+### Central Marketing Team
 
-1. Generate a Confluence API token at https://id.atlassian.com/manage-profile/security/api-tokens
-2. When Claude prompts for credentials, provide your email and API token
+| Plugin | Version | Skills | Who It's For |
+|--------|---------|--------|-------------|
+| `tm-marketing-core` | 1.0.0 | copywriting, translation, campaign-planning | B2C and B2B marketing teams |
 
-If you cannot access Confluence or receive an authentication error, contact marketing-tech@ticketmaster.com.
+### Registered Team Prefixes
 
----
+| Team | Prefix | Directory |
+|------|--------|-----------|
+| Central Marketing | `tm-marketing` | `plugins/tm-marketing/` |
 
-## For Admins
+## Repository Structure
 
-### Enterprise Admin Setup (one-time)
+```
+claude-plugin-marketing-central/
+├── .claude-plugin/marketplace.json     # Marketplace manifest (all plugins)
+├── .gitlab/
+│   ├── CODEOWNERS                      # Automatic reviewer assignment
+│   └── merge_request_templates/        # MR templates (new-plugin, new-skill)
+├── plugins/
+│   └── tm-marketing/
+│       └── tm-marketing-core/          # Central marketing plugin
+│           ├── .claude/plugin.json     # Plugin identity
+│           ├── .mcp.json               # LN Confluence MCP connector
+│           ├── CLAUDE.md               # Skill triggers
+│           └── skills/
+│               ├── copywriting/SKILL.md
+│               ├── translation/SKILL.md
+│               └── campaign-planning/SKILL.md
+├── docs/                               # Specs, plans, architecture docs
+├── CLAUDE.md                           # Contributor guidelines
+└── README.md
+```
 
-1. In the claude.ai admin console, add the marketplace URL:
-   `git@git.tmaws.io:andrew.wragg/claude-plugin-tm-marketing-core.git`
-2. Enable the `tm-marketing-core` plugin for all users
-3. Staff will see the plugin under **Customize → Plugins → Your organisation**
+## Confluence Authentication
 
-### Adding New Skills
+When you first use a skill that searches Confluence, Claude may prompt for a Confluence API token:
 
-1. Create `skills/[skill-name]/SKILL.md`
-2. Add a trigger row to `CLAUDE.md`
-3. Bump `version` in `.claude/plugin.json` and `.claude-plugin/marketplace.json`
-4. Commit and push — staff pick up the update automatically
+1. Generate a token at https://id.atlassian.com/manage-profile/security/api-tokens
+2. Provide your email and API token when prompted
 
----
+Contact marketing-tech@ticketmaster.com for support.
 
-## Support
+## Contributing
 
-Contact the marketing technology team at marketing-tech@ticketmaster.com.
+See [CLAUDE.md](CLAUDE.md) for contributor guidelines, versioning rules, and how to add new plugins and skills. Use the MR templates in `.gitlab/merge_request_templates/` when raising changes.

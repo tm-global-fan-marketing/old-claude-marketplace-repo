@@ -1,0 +1,13 @@
+# TM Marketing Claude Code Marketplace — CODEOWNERS
+
+# ─── Infrastructure (marketplace maintainers only) ──────────
+
+.claude-plugin/                   @andrew.wragg
+.gitlab/                          @andrew.wragg
+docs/                             @andrew.wragg
+*.md                              @andrew.wragg
+.gitlab-ci.yml                    @andrew.wragg
+
+# ─── Central Marketing Team ─────────────────────────────────
+
+plugins/tm-marketing/             @andrew.wragg

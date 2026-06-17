@@ -6,7 +6,7 @@
     "name": "Ticketmaster Marketing",
     "email": "marketing-tech@ticketmaster.com"
   },
-  "homepage": "https://git.tmaws.io/andrew.wragg/claude-plugin-tm-marketing-core",
-  "repository": "git@git.tmaws.io:andrew.wragg/claude-plugin-tm-marketing-core.git",
+  "homepage": "https://git.tmaws.io/andrew.wragg/claude-plugin-marketing-central",
+  "repository": "git@git.tmaws.io:andrew.wragg/claude-plugin-marketing-central.git",
   "license": "MIT"
 }
