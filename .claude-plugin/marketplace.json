@@ -10,26 +10,32 @@
     {
       "name": "tm-marketing-core",
       "description": "Marketing skills and tools for Ticketmaster's central marketing org — copywriting, translation, campaign planning, and more.",
-      "version": "1.0.0",
+      "version": "1.5.0",
       "author": {
         "name": "Ticketmaster Marketing",
         "email": "marketing-tech@ticketmaster.com"
       },
-      "source": "./plugins/tm-marketing/tm-marketing-core",
+      "source": {
+        "source": "github",
+        "repo": "tm-global-fan-marketing/tm-marketing-ai-marketplace",
+        "ref": "main"
+      },
       "category": "marketing",
       "keywords": [
         "marketing",
-        "copywriting",
-        "translation",
-        "campaign-planning",
+        "backstage-writer",
+        "brief-writer",
+        "content-creator",
+        "social-pulse",
         "b2c",
         "b2b"
       ],
       "tags": [
         "marketing",
-        "copywriting",
-        "translation",
-        "campaign-planning",
+        "backstage-writer",
+        "brief-writer",
+        "content-creator",
+        "social-pulse",
         "tm-marketing"
       ]
     }

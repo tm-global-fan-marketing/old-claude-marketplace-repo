@@ -1,40 +1,28 @@
-# TM Marketing Claude Code Marketplace — Contributor Guidelines
+# tm-marketing-core Plugin
 
-## Version Bumps (REQUIRED)
+This plugin provides marketing skills and the LN Confluence connector for Ticketmaster's central marketing org (B2C and B2B teams).
 
-When modifying any file inside a `plugins/` directory, you MUST bump the plugin version:
+## Skills
 
-1. **`plugin.json`** — increment the `"version"` field inside `plugins/{team}/{plugin}/.claude/plugin.json`
-2. **`marketplace.json`** — update the matching `"version"` in `.claude-plugin/marketplace.json`
-3. **`README.md`** — update the version in the plugins table
+| Skill | When to use |
+|---|---|
+| `marketing-wizard` | Default entry point — works out what a marketing request needs and routes it to the right skill |
+| `backstage-writer` | Write, rewrite, or review marketing copy in the TM/LN brand voice (B2C or B2B) |
+| `brief-writer` | Draft a Campaign and Creative Brief for Fan Product Marketing / Brand and Content (B2C only) |
+| `content-creator` | Build a B2B campaign — Campaign Messaging Plan plus its assets — around a product, theme, or proposition |
+| `content-localiser` | Localise or translate already-approved content for a named market, using that market's approved rules |
+| `social-pulse` | Check social performance against market history or peer markets; surface testable content ideas |
 
-### Which version component to bump
+Each skill fetches its live Confluence page before producing anything — the page, not the skill file, is the source of truth.
 
-- **PATCH** (1.0.0 → 1.0.1): Bug fixes, typo corrections, minor wording changes
-- **MINOR** (1.0.0 → 1.1.0): New skills, significant workflow improvements, new features
-- **MAJOR** (1.0.0 → 2.0.0): Breaking changes, complete rewrites, removed skills
+## LN Confluence Connector
 
-## Adding a New Plugin
+The `ln-confluence` MCP connector is available for all skills. Use it proactively:
 
-1. Create `plugins/{team}/{plugin-name}/` directory
-2. Add `.claude/plugin.json` with name, description, version, author, homepage, repository
-3. Add `skills/{skill-name}/SKILL.md` for each skill
-4. Add `.mcp.json` if the plugin needs MCP connectors
-5. Register the plugin in `.claude-plugin/marketplace.json`
-6. Update `README.md` plugins table
-7. Raise an MR using the `new-plugin` template
+**Do not produce final copy, a translation, or a campaign brief without first searching Confluence for relevant guidelines or prior work, unless the user explicitly waives this step.**
 
-### Plugin Naming
+- **Before writing copy:** Search Confluence for brand guidelines, tone of voice docs, and approved messaging.
+- **Before planning a campaign:** Search Confluence for existing campaigns, briefs, and channel strategies relevant to the audience or product.
+- **When producing a report or plan:** Offer to publish the output back to Confluence when the user is satisfied with the result.
 
-Plugin names must follow the `tm-marketing-{role}` pattern:
-
-| Team | Prefix | Directory |
-|---|---|---|
-| Central Marketing | `tm-marketing` | `plugins/tm-marketing/` |
-
-## Adding a New Skill to an Existing Plugin
-
-1. Create `plugins/{team}/{plugin}/skills/{skill-name}/SKILL.md`
-2. Add a trigger row to `plugins/{team}/{plugin}/CLAUDE.md`
-3. Bump MINOR version in `plugin.json` and `marketplace.json`
-4. Update `README.md`
+The `ln-confluence` connector authenticates via SSO — no API key is required.

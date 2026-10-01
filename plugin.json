@@ -1,12 +1,11 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "tm-marketing-core",
+  "version": "1.5.0",
   "description": "Marketing skills and tools for Ticketmaster's central marketing org — copywriting, translation, campaign planning, and more.",
-  "version": "1.0.0",
   "author": {
     "name": "Ticketmaster Marketing",
     "email": "marketing-tech@ticketmaster.com"
   },
-  "homepage": "https://git.tmaws.io/andrew.wragg/claude-plugin-marketing-central",
-  "repository": "git@git.tmaws.io:andrew.wragg/claude-plugin-marketing-central.git",
   "license": "MIT"
 }
